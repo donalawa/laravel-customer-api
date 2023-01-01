@@ -1,11 +1,12 @@
 <?php 
 
-namespace App\Services\V1;
+namespace App\Filters\V1;
 
+use App\Filters\ApiFilter;
 use illuminate\Http\Request;
 
-class CustomerQuery {
-    protected $allowedParams = [
+class CustomersFilter extends ApiFilter {
+    protected $safeParams = [
         'name' => ['eq'],
         'type' => ['eq'],
         'email' => ['eq'],
@@ -27,7 +28,5 @@ class CustomerQuery {
         'gte' => '≥',
     ];
 
-    public function transform(Request $request) {
-        $eloQuery = [];
-    }
+ 
 }
